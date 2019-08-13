@@ -19,7 +19,7 @@ function FontAwesomeIcon(props) {
 }
 
 FontAwesomeIcon.propTypes = {
-  name: PropTypes.string.isRequired, // the <i> tag found after selecting an icon at https://fontawesome.com/icons?d=gallery
+  name: PropTypes.string.isRequired, // the <i> tag found after selecting an icon at: https://fontawesome.com/icons?d=gallery
   className: PropTypes.string,
 };
 
