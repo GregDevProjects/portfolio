@@ -12,10 +12,14 @@ import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   card: {
-    maxWidth: 250,
+    width: 250,
   },
   media: {
-    height: 150,
+    height: 250,
+    backgroundSize: 250,
+  },
+  content: {
+    height: 100,
   },
 });
 
@@ -32,7 +36,7 @@ const ProjectCard = (props) => {
           image={image}
           title={name}
         />
-        <CardContent>
+        <CardContent className={classes.content}>
           <Typography gutterBottom variant="h5" component="h2">
             {name}
           </Typography>

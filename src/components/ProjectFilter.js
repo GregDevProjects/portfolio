@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
+import PropTypes from 'prop-types';
 import FilterButton from './FilterButton';
+import filters from '../enums';
 
-const filters = {
-  all: 1,
-  openSource: 2,
-  personal: 3,
-  professional: 4,
-};
 
 const useStyles = makeStyles({
   container: {
@@ -17,11 +13,13 @@ const useStyles = makeStyles({
   },
 });
 
-function ProjectFilter() {
+function ProjectFilter(props) {
   const classes = useStyles();
-  const [filter, setFilter] = useState(0);
+  const [filter, setFilter] = useState(1);
+  const { onFilterChange } = props;
   const handleFilterClick = (selectedFilter) => {
     setFilter(selectedFilter);
+    onFilterChange(selectedFilter);
   };
 
   return (
@@ -43,5 +41,9 @@ function ProjectFilter() {
     </div>
   );
 }
+
+ProjectFilter.propTypes = {
+  onFilterChange: PropTypes.func.isRequired,
+};
 
 export default ProjectFilter;
