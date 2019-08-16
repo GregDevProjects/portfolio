@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { makeStyles } from '@material-ui/styles';
 import Helmet from 'react-helmet';
@@ -16,10 +16,6 @@ const useStyles = makeStyles({
 
 function App() {
   const classes = useStyles();
-  const [filter, setFilter] = useState(1);
-  const handleFilterChange = (selectedFilter) => {
-    setFilter(selectedFilter);
-  };
 
   return (
     <div className={classes.root}>
